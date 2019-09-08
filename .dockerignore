@@ -1,0 +1,4 @@
+.* #Doesn't build any files starting with . (Ex: .git, .gitignore)
+docker-compose.yml #Do not include this file in the container
+*.md #Do not include any markdown files
+!README.md #Include readme file
