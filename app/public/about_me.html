@@ -39,18 +39,15 @@
              </ul>
          </div>
      </nav>
-
-
-
    <main class="row">
      <!--Source: https://getbootstrap.com/docs/4.3/content/tables/#table-head-options -->
      <!--Source: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_mailto -->
      <!--Image sources: https://i.pinimg.com/originals/c0/fd/0e/c0fd0e58709203a8643ad60775d6cb5f.jpg
                         http://static.abplive.in/wp-content/uploads/sites/6/2017/04/29080517/Devasena.jpg -->
-  <table align="center" id="personProfileApp" v-for="person" class="table-condensed">
+  <table align="center" id="personProfileApp" class="table-condensed">
   <thead class="thead-dark">
     <tr>
-      <td align="center" colspan="2"><a href="person.picture.large"><img :src="person.picture.medium" height="100" ></a> </td>
+      <td align="center" colspan="2"><a href="person.picture.large"><img :src="person.picture.thumbnail" height="80" ></a> </td>
       <!--
     <td><a href="img/devasena4.jpg">Source:i.pinimg.com<img src="img/devasena4.jpg" height="500" width="400"></a> </td>
     <td><a href="img/devasena3.jpg">Source: ABPLive<img src="img/devasena3.jpg" height="500" width="700"></a> -->
@@ -76,10 +73,19 @@
     <tr>
         <th scope="row">Age</th>
         <td>{{ person.dob.age }} </td>
+    </tr>
     <tr>
       <th scope="row">Address</th>
       <td>{{person.location.street}}, {{person.location.city}}<br>
           {{person.location.state}}, {{person.location.postcode}}</td>
+    </tr>
+    <tr>
+        <th scope="row">Phone</th>
+        <td>{{ person.phone }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Cell</th>
+        <td>{{ person.cell }}</td>
     </tr>
     <tr>
       <th scope="row">Email ID</th>
@@ -90,10 +96,9 @@
     </tr>
   </tbody>
 </table>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+<script src="js/person.app.js"> </script>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
-  <script src="js/person.app.js"> </script>
    <footer class="row">
    <p>Info Source:<a href="https://randomuser.me">RandomUser</a> | No copyright infringement intended. Used for academic purposes only</p>
    <!--<p>Info Source:<a href="https://baahubali.fandom.com/wiki/Devasena"> Baahubali Wiki</a> | No copyright infringement intended. Used for academic purposes only</p>-->

@@ -31,7 +31,7 @@ var personApp= new Vue({
       cell: '',
       picture: {
         large: '',
-        medium: '',
+        medium:'',
         thumbnail: ''
       }
     }
