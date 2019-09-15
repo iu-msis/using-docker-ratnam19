@@ -1,6 +1,7 @@
 .container{
   background-color: beige;
   color: brown;
+  text-transform: capitalize;
 }
 header{
   padding: 30px;
@@ -23,6 +24,7 @@ a:hover,#af:hover{
 }
 .devasena{
   color:brown;
+  text-transform: lowercase;
 }
 footer{
   color: darkgrey;

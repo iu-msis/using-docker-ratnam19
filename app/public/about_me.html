@@ -47,96 +47,56 @@
      <!--Source: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_mailto -->
      <!--Image sources: https://i.pinimg.com/originals/c0/fd/0e/c0fd0e58709203a8643ad60775d6cb5f.jpg
                         http://static.abplive.in/wp-content/uploads/sites/6/2017/04/29080517/Devasena.jpg -->
-  <table align="center" class="table">
+  <table align="center" id="personProfileApp" v-for="person" class="table-condensed">
   <thead class="thead-dark">
     <tr>
+      <td align="center" colspan="2"><a href="person.picture.large"><img :src="person.picture.medium" height="100" ></a> </td>
+      <!--
     <td><a href="img/devasena4.jpg">Source:i.pinimg.com<img src="img/devasena4.jpg" height="500" width="400"></a> </td>
-    <td><a href="img/devasena3.jpg">Source: ABPLive<img src="img/devasena3.jpg" height="500" width="700"></a>
-    </td>
+    <td><a href="img/devasena3.jpg">Source: ABPLive<img src="img/devasena3.jpg" height="500" width="700"></a> -->
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">Full Name</th>
-      <td>Devasena Baahubali</td>
-    </tr>
-    <tr>
-      <th scope="row">Aliases</th>
-      <td>Devasena <br>
-        Maharani</td>
+      <td class="personName">{{ person.name.first }} {{person.name.last}} </td>
     </tr>
     <tr>
       <th scope="row">Gender</th>
-      <td>♀ Female</td>
+      <td>{{ person.gender }}</td>
     </tr>
     <tr>
-          <th scope="row">Country</th>
-          <td>India</td>
+          <th scope="row">Timezone</th>
+          <td>{{ person.location.timezone.description }}</td>
       </tr>
     <tr>
         <th scope="row">Date of birth</th>
-        <td> 7 November 1981 </td>
+        <td>{{ person.dob.date }} </td>
     </tr>
     <tr>
         <th scope="row">Age</th>
-        <td> 38 </td>
-    </tr>
-      <th scope="row">Hair</th>
-      <td>Black</td>
-    </tr>
+        <td>{{ person.dob.age }} </td>
     <tr>
-      <th scope="row">Kingdoms</th>
-      <td>Kunthala <br>
-        Mahishmathi</td>
-    </tr>
-    <tr>
-      <th scope="row">Eye colour</th>
-      <td>Brown</td>
-    </tr>
-    <tr>
-      <th scope="row">Spouse</th>
-      <td>Amarendra Baahubali</td>
-    </tr>
-    <tr>
-      <th scope="row">Children</th>
-      <td>Mahendra Baahubali (Son)</td>
-    </tr>
-    <tr>
-      <th scope="row">Daughter in law</th>
-      <td>Avanthika</td>
-    </tr>
-    <tr>
-      <th scope="row">Family</th>
-      <td>Jaya Varma (Elder brother) † <br>
-      Vikramadeva (Father-in-law) †  <br>
-      Sivagami (Mother-in-law) † <br>
-      Kumara Varma (Cousin) † <br>
-      Bhadra (Nephew) †</td>
-    </tr>
-    <tr>
-      <th scope="row">Friends</th>
-      <td>Kattappa</td>
-    </tr>
-    <tr>
-      <th scope="row">Enemies</th>
-      <td>Bhallala Deva †<br>
-      Bhadra †<br>
-      Bijjaladeva †</td>
-    </tr>
-    <tr>
-      <th scope="row">Portrayed by</th>
-      <td>Anushka Shetty</td>
+      <th scope="row">Address</th>
+      <td>{{person.location.street}}, {{person.location.city}}<br>
+          {{person.location.state}}, {{person.location.postcode}}</td>
     </tr>
     <tr>
       <th scope="row">Email ID</th>
-      <td><a class="devasena" href="mailto:devasena.bahubali@gmail.com?Subject=Hello" target="_top">devasena.bahubali@gmail.com</a></td>
+     <td><a class="devasena" v-bind:href="['mailto:' + person.email]" target="_top">{{person.email}}</a></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2"><button v-on:click="fetchPerson">Next Profile</button></td>
     </tr>
   </tbody>
 </table>
 
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+  <script src="js/person.app.js"> </script>
    <footer class="row">
-   <p>Info Source:<a href="https://baahubali.fandom.com/wiki/Devasena"> Baahubali Wiki</a> | No copyright infringement intended. Used for academic purposes only</p>
+   <p>Info Source:<a href="https://randomuser.me">RandomUser</a> | No copyright infringement intended. Used for academic purposes only</p>
+   <!--<p>Info Source:<a href="https://baahubali.fandom.com/wiki/Devasena"> Baahubali Wiki</a> | No copyright infringement intended. Used for academic purposes only</p>-->
    </footer>
   </div>
 </body>
