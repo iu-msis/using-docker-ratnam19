@@ -33,7 +33,8 @@ var personApp= new Vue({
         large: '',
         medium:'',
         thumbnail: ''
-      }
+      },
+      nat: ''
     }
     ]
   },
