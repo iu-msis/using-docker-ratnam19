@@ -1,42 +1,58 @@
 var personApp= new Vue({
   el: '#personProfileApp',
   data: {
-    person: [{
-      name: {
-        title:'',
-        last: '',
-        first: ''
-      },
-      gender: '',
-      location: {
-        street: '',
-        city: '',
-        state: '',
-        postcode: '',
-        coordinates: {
-          latitude: '',
-          longitude: ''
+    person: {
+      "gender": "",
+        "name": {
+          "title": "",
+          "first": "",
+          "last": ""
         },
-        timezone: {
-          offset: '',
-          description: ''
-        }
-      },
-      email: '',
-      dob: {
-        date: '',
-        age: ''
-      },
-      phone: '',
-      cell: '',
-      picture: {
-        large: '',
-        medium:'',
-        thumbnail: ''
-      },
-      nat: ''
+        "location": {
+          "street": "",
+          "city": "",
+          "state": "",
+          "postcode": "",
+          "coordinates": {
+            "latitude": "",
+            "longitude": ""
+          },
+          "timezone": {
+            "offset": "",
+            "description": ""
+          }
+        },
+        "email": "",
+        "login": {
+          "uuid": "",
+          "username": "",
+          "password": "",
+          "salt": "",
+          "md5": "",
+          "sha1": "",
+          "sha256": ""
+        },
+        "dob": {
+          "date": "",
+          "age": null
+        },
+        "registered": {
+          "date": "",
+          "age": null
+        },
+        "phone": "",
+        "cell": "",
+        "id": {
+          "name": "",
+          "value": ""
+        },
+        "picture": {
+          "large": "",
+          "medium": "",
+          "thumbnail": ""
+        },
+        "nat": ""
     }
-    ]
   },
   methods: {
     fetchPerson(event){
