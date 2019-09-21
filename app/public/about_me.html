@@ -96,7 +96,11 @@
      <td><a class="devasena" v-bind:href="['mailto:' + person.email]" target="_top">{{person.email}}</a></td>
     </tr>
     <tr>
-      <td align="center" colspan="2"><button v-on:click="fetchPerson">Next Profile</button></td>
+      <td align="center" colspan="2">
+      <form id="fetch" @submit.prevent="fetchPerson">
+        <button type="submit">Next Profile</button>
+      </form>
+    </td>
     </tr>
   </tbody>
 </table>
